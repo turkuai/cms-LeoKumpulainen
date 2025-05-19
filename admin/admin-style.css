@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: whitesmoke
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+.admin-section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#quickLinksList {
+  list-style: none;
+  padding: 0;
+}
+
+#quickLinksList li {
+  margin: 5px 0;
+}
+
+#quickLinksList a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007acc;
+}
+
+.delete-btn {
+  background-color: #d33;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background-color: rgb(124, 17, 17);
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: white;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* Optional: wraps content on small screens */
+}
+
+.article-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.article-image {
+  max-width: 200px;
+  text-align: center;
+}
+
+.article-image img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
