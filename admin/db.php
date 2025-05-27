@@ -42,15 +42,15 @@ function getTitle() {
 function getDesc() {
     global $pdo;
     try {
-    $stmt = $pdo->prepare("SELECT description FROM site_meta WHERE id = 1 LIMIT 1");
-    $stmt->execute();
-    $data = $stmt->fetch();
+        $stmt = $pdo->prepare("SELECT description FROM site_meta WHERE id = 1 LIMIT 1");
+        $stmt->execute();
+        $data = $stmt->fetch();
 
-    if ($data) {
-        return (['success' => true, 'description' => $data['description']]);
-    } else {
-        return (['success' => false, 'message' => 'Description not found']);
-    }
+        if ($data) {
+            return (['success' => true, 'description' => $data['description']]);
+        } else {
+            return (['success' => false, 'message' => 'Description not found']);
+        }
     } catch (PDOException $e) {
         return (['success' => false, 'message' => 'DB query failed']);
     }
@@ -59,9 +59,9 @@ function getDesc() {
 function getFooter() {
     global $pdo;
     try {
-    $stmt = $pdo->query("SELECT footer FROM site_meta WHERE id = 1");
-    $row = $stmt->fetch();
-    return (['success' => true, 'footer' => $row['footer'] ?? '']);
+        $stmt = $pdo->query("SELECT footer FROM site_meta WHERE id = 1");
+        $row = $stmt->fetch();
+        return (['success' => true, 'footer' => $row['footer'] ?? '']);
     } catch (Exception $e) {
         return (['success' => false, 'message' => $e->getMessage()]);
     }
