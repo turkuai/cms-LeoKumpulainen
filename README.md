@@ -7,3 +7,8 @@ https://turkuai.github.io/cms-LeoKumpulainen/
 
 Netlify:
 https://stonehengesigma.netlify.app
+
+PHP Git:
+http://194.197.245.5/tiev23n/leo/cms/
+
+http://194.197.245.5/tiev23n/leo/cms/admin
