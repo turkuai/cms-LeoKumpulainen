@@ -22,4 +22,49 @@ try {
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+
+function getTitle() {
+    global $pdo;
+    try {
+        $stmt = $pdo->query("SELECT title FROM site_meta WHERE id = 1");
+        $row = $stmt->fetch();
+
+        if ($row) {
+            return (['success' => true, 'title' => $row['title']]);
+        } else {
+            return (['success' => false, 'message' => 'Title not found']);
+        }
+    } catch (Exception $e) {
+        return (['success' => false, 'message' => $e->getMessage()]);
+    }
+}
+
+function getDesc() {
+    global $pdo;
+    try {
+    $stmt = $pdo->prepare("SELECT description FROM site_meta WHERE id = 1 LIMIT 1");
+    $stmt->execute();
+    $data = $stmt->fetch();
+
+    if ($data) {
+        return (['success' => true, 'description' => $data['description']]);
+    } else {
+        return (['success' => false, 'message' => 'Description not found']);
+    }
+    } catch (PDOException $e) {
+        return (['success' => false, 'message' => 'DB query failed']);
+    }
+}
+
+function getFooter() {
+    global $pdo;
+    try {
+    $stmt = $pdo->query("SELECT footer FROM site_meta WHERE id = 1");
+    $row = $stmt->fetch();
+    return (['success' => true, 'footer' => $row['footer'] ?? '']);
+    } catch (Exception $e) {
+        return (['success' => false, 'message' => $e->getMessage()]);
+    }
+
+}
 ?>

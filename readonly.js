@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadArticles() {
   const container = document.getElementById("articleSection");
 
-  fetch('http://localhost/bogdan-harjoitus/admin/get_articles.php')
+  fetch('admin/get_articles.php')
     .then(res => res.json())
     .then(data => {
       if (data.success) {
@@ -43,7 +43,7 @@ function loadQuickLinks() {
   const list = document.getElementById("quickLinksList");
   if (!list) return;
 
-  fetch('http://localhost/bogdan-harjoitus/admin/get_quicklinks.php') // Fix this URL!
+  fetch('admin/get_quicklinks.php') // Fix this URL!
     .then(res => res.json())
     .then(data => {
       if (data.success) {

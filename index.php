@@ -1,7 +1,11 @@
 <?php
-$titleData = json_decode(file_get_contents('http://localhost/bogdan-harjoitus/admin/get_title.php'), true);
-$descData = json_decode(file_get_contents('http://localhost/bogdan-harjoitus/admin/get_description.php'), true);
-$footerData = json_decode(file_get_contents('http://localhost/bogdan-harjoitus/admin/get_footer.php'), true);
+
+require_once 'admin/db.php'; // Make sure this sets up a valid $pdo object
+
+$titleData = getTitle();
+$descData = getDesc();
+$footerData = getFooter();
+
 ?>
 
 <!DOCTYPE html>
